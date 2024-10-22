@@ -4,7 +4,15 @@ OS=$(uname) # Get the operating system
 
 # Create a new user with sudo privileges
 if [ "$OS" == "Linux" ]; then
+    echo "Enter the username: "
+    read USER
+
     sudo adduser $USER
+    # If user already exists, skip the following steps
+    if ! id -u $USER &> /dev/null; then
+        exit 1
+    fi
+
     sudo usermod -aG sudo $USER
 
     echo "Root user has been created"
