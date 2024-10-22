@@ -5,6 +5,7 @@ OS=$(uname) # Get the operating system
 # Set up fish
 if [ "$OS" == "Darwin" ]; then
     # TODO: Set up termina and fish
+    echo "TODO"
 elif [ "$OS" == "Linux" ]; then
     sudo apt install fish # Install fish
     sudo fish # Set fish as the default shell
