@@ -17,6 +17,8 @@ if [ "$OS" == "Linux" ]; then
             echo "Root user has been created and switched to"
 
             sudo whoami
+
+            git clone https://github.com/ChenMatsu/Scripts.git
         else
             echo "Failed to switch to root user"
         fi
