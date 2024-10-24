@@ -18,16 +18,10 @@ if [ "$OS" == "Linux" ]; then
     echo "Root user has been created"
 
     su - $USER
+    echo "$USER user has been created and switched to"
+    sudo whoami
 
-    if [ $? -eq 0 ]; then
-        echo "Root user has been created and switched to"
-
-        sudo whoami
-
-        git clone https://github.com/ChenMatsu/Scripts.git
-    else
-        echo "Failed to switch to root user"
-    fi
+    git clone https://github.com/ChenMatsu/Scripts.git
 else
     echo "This script is only supported on Linux"
 fi
