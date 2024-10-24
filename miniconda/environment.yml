@@ -1,0 +1,15 @@
+name: dev
+channels:
+  - defaults
+  - pytorch
+dependencies:
+  - python=3.12
+  - pip
+  - numpy
+  - pandas
+  - scikit-learn
+  - matplotlib
+  - pip:
+    - torch==2.5.0
+    - torchaudio==2.5.0
+    - torchvision==0.20.0
