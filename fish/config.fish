@@ -7,7 +7,7 @@ set -g theme_hide_hostname no
 set -g theme_color_scheme terminal-dark
 
 switch (uname)
-    case Darwin
+    case Darwin 
         source (dirname (status --current-filename))/config-macos.fish
     case Linux
         source (dirname (status --current-filename))/config-linux.fish

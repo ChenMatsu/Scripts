@@ -33,5 +33,5 @@ else
 fi
 
 echo "Docker version $(docker --version)"
-echo "Docker Compose version $(docker-compose --version)"
+echo "Docker Compose version $(docker compose version)"
 echo "Docker and Docker Compose have been installed"
