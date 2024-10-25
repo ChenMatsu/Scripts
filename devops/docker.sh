@@ -11,7 +11,9 @@ if [ "$OS" == "Darwin" ]; then
 elif [ "$OS" == "Linux" ]; then
     # Check if docker is already installed
     if !command -v docker &> /dev/null; then
-        sudo apt-get remove docker docker-engine  docker.io containerd runc
+        sudo apt-get purge docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin docker-ce-rootless-extras
+        sudo rm -rf /var/lib/docker
+        sudo rm -rf /etc/docker
     fi
 
     sudo apt-get update
