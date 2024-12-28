@@ -58,3 +58,6 @@ yarn-error.log*
 .DS_Store?
 .Trashes
 .idea/
+
+# env files
+.env
