@@ -2,28 +2,11 @@
 
 OS=$(uname)
 
-if [ "$OS" = "Darwin" ]; then
-    brew update
-    brew upgrade
+if [ "$OS" = "Darwin" ] || [ "$OS" = "Linux" ]; then
+    brew install neovim
 
-    brew install --HEAD neovim luajit tree-sitter
-
-    which nvim
-    ln -s $(which nvim) /usr/bin/vim
-    which vim
-
-    # Install Vim Plug
-    sh -c 'curl -fLo $HOME/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-elif [ "$OS" = "Linux" ]; then
-    sudo apt update
-    sudo apt upgrade
-
-    sudo apt install -y neovim luajit tree-sitter
-
-    which nvim
-    ln -s $(which nvim) /usr/local/bin/vim # TODO: check if this is correct
-    which vim
+    # Install Plugin Manager: Lazyvim
+    git clone https://github.com/LazyVim/starter ~/.config/nvim
 else
     echo "Unsupported OS"
 fi
